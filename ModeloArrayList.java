@@ -26,14 +26,8 @@ public class ModeloArrayList extends ModeloAbs {
      * @return ->true(si se ha borrado) o false(si no existe o no se encuentra producto a borrar)
      */
     public boolean borrarProducto ( int codigo ){
-        for (int i=0; i<this.lista.size(); i++){
-            if (this.lista.get(i).getCodigo() == codigo){
-                this.lista.remove(i);
-                return true;
-            }
-        }
-        System.out.println("No existe producto con codigo: "+ codigo);
-        return false;
+        boolean auxBorrarProducto= lista.removeIf( producto -> producto.getCodigo() == codigo );
+        return auxBorrarProducto;
     }
 
     /**

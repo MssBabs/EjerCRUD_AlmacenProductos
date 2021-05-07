@@ -140,7 +140,7 @@ public class MiAlmacen
      */
     private static void borrar(){
         System.out.println("<ELIMINAR>");
-        System.out.println("Aún no disponible");
+        System.out.println("Introduzco codigo del producto que desea borrar");
         int codigo = leerEntero();
         boolean auxBorrar = almacen.borrarProducto(codigo);
 
@@ -156,6 +156,7 @@ public class MiAlmacen
      */
     private static void modificarPrecio (){
         System.out.println("<MODIFICAR PRECIO>");
+        System.out.println("Introduzco codigo del producto qal que desea modificar el precio");
         int codigo = leerEntero();
         Producto p = almacen.buscarProducto(codigo);
 
@@ -177,6 +178,7 @@ public class MiAlmacen
      */
     private static void comprar(){     
        System.out.println("<COMPRAR PRODUCTO>");
+        System.out.println("Introduzco codigo del producto que desea comprar");
         int codigo = leerEntero();
         Producto p = almacen.buscarProducto(codigo);
 
@@ -198,6 +200,7 @@ public class MiAlmacen
      */
     private static void vender(){
         System.out.println("<VENDER PRODUCTO>");
+        System.out.println("Introduzco codigo del producto que desea vender");
         int codigo = leerEntero();
         Producto p = almacen.buscarProducto(codigo);
 
@@ -236,8 +239,6 @@ public class MiAlmacen
      */
     private static void crear(){
        System.out.println("<NUEVO PRODUCTO>");
-       System.out.println("Introduzca codigo del producto");
-       int codigo = leerEntero();
        System.out.println("Introduzca nombre del producto");
        String nombre = sc.nextLine();
        System.out.println("Introduzca Stock del producto");
@@ -247,7 +248,7 @@ public class MiAlmacen
        System.out.println("Introduzca precio del producto");
        float precio = leerFloat();
         //Creamos Producto
-       Producto p = new Producto(codigo, nombre, stock, stock_min, precio);
+       Producto p = new Producto( nombre, stock, stock_min, precio);
        almacen.insertarProducto(p);
     }
 }

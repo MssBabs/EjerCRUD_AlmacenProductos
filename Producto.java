@@ -4,11 +4,13 @@
  */
 public class Producto {
     // instance variables - replace the example below with your own
-    int codigo;    // Código del producto, se utiliza para buscar
-    String nombre; // Nombre un texto
-    int stock;    // existencia actuales
-    int stock_min; // Número mínimo de existencias recomedadas
-    float precio;  // Precio
+    int codigo;     // Código del producto, se utiliza para buscar
+    static int auxCodigo=0;
+
+    String nombre;  // Nombre un texto
+    int stock;      // existencia actuales
+    int stock_min;  // Número mínimo de existencias recomedadas
+    float precio;   // Precio
 
     /**
      * Constructor
@@ -16,14 +18,9 @@ public class Producto {
     public Producto() {
     }
 
-    // Completar
-    public Producto ( int codigo, String nombre){
-        this.codigo = codigo;
-        this.nombre = nombre;
-    }
+    public Producto( String nombre, int stock, int stock_min, float precio) {
+        this.codigo = auxCodigo++;
 
-    public Producto(int codigo, String nombre, int stock, int stock_min, float precio) {
-        this.codigo = codigo;
         this.nombre = nombre;
         this.stock = stock;
         this.stock_min = stock_min;
